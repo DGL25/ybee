@@ -1,0 +1,167 @@
+$background: #fff;
+$verde: #0E2014;
+$verdeClaro: #E5DCB1;
+$amarelo: #EBA326;
+
+@mixin flex() {display: flex;align-items: center;justify-content: center;}
+@mixin centerAbsolute() {position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);}
+
+*{
+    padding: 0;margin: 0;
+    box-sizing: border-box;
+    font-family: 'Cabrion', sans-serif;font-weight: 300;font-size: 1em;
+    text-decoration: none;
+    list-style: none;
+}
+
+.btn-acao{
+    width: 175px;height: 45px;
+    border-radius: 25px;border: none;
+    background: $amarelo;
+    color: $verde !important;
+    font-size: 1.25em;font-weight: 600 !important;
+    cursor: pointer;
+    @include flex();
+}
+
+.banner{width: 100%;}
+
+@media (min-width:320px) and (max-width:475px) {.bannerD{display: none;}}
+@media (min-width:476px) {.bannerM{display: none;}}
+
+#cabecalho{
+    #nav-bar{
+        position: relative;
+        margin: 25px auto 75px auto;padding: 0 50px;
+        width: calc(100vw - 50px); height: 75px;
+        background: $verde;
+        border-radius: 50px;
+        @include flex();
+
+        #logo-drop{
+            @include flex(); justify-content: space-between;
+            width: 100%;
+
+            .item-logo-drop{
+                #logo{
+                    width: 48.33px;height: 25px;
+                    background: url('../media/svg/YBEE\ 02.svg') no-repeat center center;
+                    @include flex();
+                    cursor: pointer;
+                }
+        
+                #drop-menu{
+                    width: 35px;height: 20px;
+        
+                    @media (min-width:720px) {display: none;}
+        
+                    span{
+                        position: relative;
+                        width: 35px;height: 3px;
+                        border-radius: 5px;
+                        background: $verdeClaro;
+                        display: block;
+        
+                        &:nth-child(2){
+                            margin: 10px 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        #nav{
+            @include flex();
+
+            .item-nav{
+                margin: 0 12.5px;
+                font-weight: 400;
+                color: $verdeClaro;
+                cursor: pointer;
+            }
+
+            .active{font-weight: 600;color: $amarelo;font-size: 1.125em;}
+        }
+    }
+}
+
+#conteudo{
+    #produtos{
+        @include flex();
+        margin-bottom: 125px;
+        .produto{
+            position: relative;
+            width: 436px;height: 400px;
+            margin: 0 75px;
+            &::before{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                width: 436px;height: 255px;
+                background: $verde;
+                border-radius: 50px;
+                z-index: -1;
+            }
+
+            .img-produto{
+                position: absolute;
+                height: 400px;
+            }
+
+            div{
+                position: absolute;
+                height: calc(255px - 50px);
+                right: 25px;bottom: 25px;
+                color: $verdeClaro;
+
+                .titulo-produto{
+                    font-family: 'Rozha One', serif;font-size: 2.625em;
+                    line-height: 0px;
+                    color: $amarelo;
+                }
+
+                .preco-produto{
+                    margin: 25px 0 15px 0;
+                    .destaque{font-size: 1.8125em;font-family: 'Rozha One', serif;color: $amarelo;}
+                }
+            }
+        }
+    }
+
+    #blog{
+        margin: 75px 0 125px 0;
+        .titulo{font-size: 4.25em;font-family: 'Rozha One', serif;text-align: center;}
+
+        .blogs{
+            @include flex();
+
+            .blog{
+                margin: 0 calc(72px / 2);
+                max-width: 293px;
+
+                .tumb-blog{
+                    width: 293px;height: 153px;
+                    background: url('../media/img/Rectangle\ 47.jpg') no-repeat center center;background-size: cover;
+                    border-radius: 10px;
+                }
+
+                &:nth-child(2){.tumb-blog{background: url('../media/img/Rectangle\ 48.jpg') no-repeat center center;background-size: cover;}}
+                &:nth-child(3){.tumb-blog{background: url('../media/img/Rectangle\ 49.jpg') no-repeat center center;background-size: cover;}}
+
+                .titulo-blog{font-size: 1.8125em;font-family: 'Rozha One', serif;}
+
+                .desc-blog{
+                    margin: 15px 0 25px 0;
+                }
+
+                .btn-acao{
+                    width: 150px;height: 35px;
+                    font-size: 1em;
+                    background: $verde;color: $verdeClaro !important;
+                }
+            }
+        }
+    }
+}
+
+@import 'mobile'
