@@ -22,6 +22,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 2.5px 2.5px 5px rgba(14, 32, 20, 0.25);
 }
 
 .banner {
@@ -90,12 +91,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #E5DCB1;
 }
 #cabecalho #nav-bar #nav .item-nav {
   margin: 0 12.5px;
   font-weight: 400;
-  color: #E5DCB1;
   cursor: pointer;
+}
+#cabecalho #nav-bar #nav .item-nav:hover {
+  color: #EBA326;
 }
 #cabecalho #nav-bar #nav .active {
   font-weight: 600;
@@ -124,10 +128,22 @@
   background: #0E2014;
   border-radius: 50px;
   z-index: -1;
+  box-shadow: 5px 5px 5px rgba(14, 32, 20, 0.25);
+}
+#conteudo #produtos .produto:hover {
+  cursor: pointer;
+}
+#conteudo #produtos .produto:hover .img-produto {
+  top: -25px;
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 25px rgba(235, 163, 38, 0.1));
 }
 #conteudo #produtos .produto .img-produto {
   position: absolute;
+  top: 0;
+  left: 0;
   height: 400px;
+  transition: 0.5s;
 }
 #conteudo #produtos .produto div {
   position: absolute;
@@ -173,6 +189,7 @@
   background: url("../media/img/Rectangle 47.jpg") no-repeat center center;
   background-size: cover;
   border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(14, 32, 20, 0.25);
 }
 #conteudo #blog .blogs .blog:nth-child(2) .tumb-blog {
   background: url("../media/img/Rectangle 48.jpg") no-repeat center center;
@@ -195,6 +212,49 @@
   font-size: 1em;
   background: #0E2014;
   color: #E5DCB1 !important;
+}
+
+#rodape {
+  background: #0E2014;
+  color: #E5DCB1;
+  display: grid;
+  grid-template-areas: "empresa contato suporte social ";
+  padding: 50px 130px;
+}
+#rodape .list .item-list {
+  margin: 10px 0;
+  cursor: pointer;
+}
+#rodape .list .titulo {
+  font-weight: 600;
+}
+#rodape .list:nth-child(1) {
+  grid-area: empresa;
+}
+#rodape .list:nth-child(2) {
+  grid-area: contato;
+}
+#rodape .list:nth-child(3) {
+  grid-area: suporte;
+}
+#rodape .list:nth-child(4) {
+  grid-area: social;
+}
+#rodape .list:nth-child(4) .item-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+#rodape .list:nth-child(4) .item-list:nth-child(2) {
+  background: url("../media/svg/face.svg") no-repeat center center;
+}
+#rodape .list:nth-child(4) .item-list:nth-child(3) {
+  background: url("../media/svg/insta.svg") no-repeat center center;
+}
+#rodape .list:nth-child(4) .item-list:nth-child(4) {
+  background: url("../media/svg/twitter.svg") no-repeat center center;
 }
 
 @media (min-width: 320px) and (max-width: 720px) {
@@ -251,5 +311,10 @@
   }
   #conteudo #blog .blogs .blog {
     margin: 50px 0;
+  }
+  #rodape {
+    grid-template-areas: "empresa social" "contato contato" "suporte suporte";
+    grid-gap: 25px;
+    padding: 50px;
   }
 }/*# sourceMappingURL=main.css.map */

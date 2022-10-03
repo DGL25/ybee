@@ -54,4 +54,12 @@
             }
         }
     }
+
+    #rodape{
+        grid-template-areas: 'empresa social'
+        'contato contato'
+        'suporte suporte';
+        grid-gap: 25px;
+        padding: 50px;
+    }
 }
